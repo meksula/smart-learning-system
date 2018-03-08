@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Language" content="pl"/>
+    <meta name="Description" content="Nasz system pomaga użytkownikom uczyć się wydajniej oraz
+            przejąć kontrolę nad czasem poświęcanym na naukę."/>
+    <meta name="viewport" content="width=divice-width, initial-scale=1"/>
+    <meta name="author" content="Karol Meksuła"/>
+    <meta name="robots" content="all, index, follow"/>
+    <link rel="shortcut icon" type="image/x-icon" href="/resources/css/icon.ico" />
+
+    <title>Welcome</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/resources/css/welcome.css}"/>
+</head>
+
+<body>
+    <div class="main_welcome">
+        <div>
+            <p>I'm so happy that my first web app is working!<br/>
+            Let's use it with us and controll your leaning process and progess!</p>
+        </div>
+
+        <ul>
+            <li><a th:href="@{/login}">Log in</a></li>
+            <li><a th:href="@{/registration}">Sign up!</a></li>
+        </ul>
+
+        <div class="easy-txt">
+            <h3>Quick user guide</h3>
+            <p>
+                If You want to use this application, thirst You have to create account.
+                After proceed further check your profile, and remember your setten nick and password!
+                In 'task' section you can add some new tasks exactly to do today, by week, month etc.
+                When you'll click 'start', SLS's timer will start working and meassure learning time!
+                After pass desired time, controll from red became green, and task will mark as done!
+                <br/>
+                <span style="font-weight: bold">Enjoy to use Smart Learn System (SLS)!</span>
+            </p>
+        </div>
+        <footer> Created by Karol Meksuła, 2018</footer>
+    </div>
+</body>
+</html>
+
+
+

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pl"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Notes</title>
+    <meta name="viewport" content="width=divice-width, initial-scale=1"/>
+
+</head>
+<body>
+
+<div>
+    <h1>Your Notes</h1>
+    <a th:href="@{/profile}">Back to homepage</a>
+    <ul>
+        <li th:each="note : ${notes}"
+            th:id="'note_' + ${note.getId()}">
+            <span th:text="${note.getDate()}">Note's date</span>
+            <div th:text="${note.getNote()}">Your note</div>
+            <hr><br/>
+        </li>
+    </ul>
+</div>
+
+</body>
+</html>

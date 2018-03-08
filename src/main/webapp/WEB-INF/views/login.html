@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pl"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <meta name="viewport" content="width=divice-width, initial-scale=1"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/resources/css/form.css}"/>
+</head>
+<body>
+<div class="div_form">
+    <!--<form action="#" th:object="${loginForm}" th:action="@{/authorization/login}" th:method="post" style="border:1px solid #ccc;">
+        <h2>Login</h2>
+        <hr>
+        <label for="nickname"><b>Nickname</b></label>
+        <input th:charset="UTF-8" type="text" placeholder="Enter your nickname" th:field="*{nickname}" required>
+
+        <label for="password"><b>Your password</b></label>
+        <input type="password" placeholder="Enter your password" th:field="*{password}" required>
+
+        <input id="remember_me" name="remember-me" type="checkbox"/>
+        <label for="remember_me" class="inline">Zapamiętaj</label>
+
+        <div class="clearfix">
+            <button type="submit" class="register">Login!</button>
+        </div>
+    </form>-->
+    <form th:action="@{/login}" method="post">
+        <label for="username">Username</label>:
+        <input type="text" id="username" name="username" autofocus="autofocus" /> <br />
+        <label for="password">Password</label>:
+        <input type="password" id="password" name="password" /> <br />
+        <input type="submit" value="Log in" />
+    </form>
+</div>
+</body>
+</html>

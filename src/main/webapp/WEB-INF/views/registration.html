@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=divice-width, initial-scale=1"/>
+    <title>Register form</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/resources/css/form.css}"/>
+</head>
+<body>
+<div class="div_form">
+    <form action="#" th:object="${systemUserForm}" th:method="post" style="border:1px solid #ccc;">
+            <h2>Registration</h2>
+                <hr>
+            <p>Please fill all in this form to create new account.</p>
+             <ul>
+                 <li th:each="err : ${#fields.errors('*')}" th:text="${err}"></li>
+             </ul>
+
+            <label for="nickname"><b>Nickname</b></label>
+            <input type="text" placeholder="Enter your nickname" th:field="*{username}" required>
+
+            <label for="name"><b>Name</b></label>
+            <input type="text" placeholder="Enter your name" th:field="*{name}" required>
+
+            <label for="surname"><b>Surname</b></label>
+            <input type="text" placeholder="Enter your surname" th:field="*{surname}" required>
+
+            <label for="yearsOld"><b>Years old</b></label>
+            <input type="text" placeholder="Enter your years old" th:field="*{bornYear}" required>
+
+            <label for="email"><b>Your e-mail address</b></label>
+            <input type="text" placeholder="Enter your e-mail address" th:field="*{email}" required>
+
+            <label for="password"><b>Your password</b></label>
+            <input type="password" placeholder="Enter your password" th:field="*{password}" required>
+
+            <label for="confirm"><b>Confirm...</b></label>
+            <input type="password" placeholder="Confirm password" th:field="*{confirmPassword}" required>
+
+            <!--todo podpiąć checkbox!!!-->
+            <label>
+                <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+            </label>
+
+            <!--todo dodać link do regulaminu!!!-->
+            <p>Our rules: <a href="" style="color:dodgerblue"></a>look out!</p>
+
+            <div class="clearfix">
+                <button type="button" class="cancel" style="background-color: #f44336">Cancel</button>
+                <button type="submit" class="register">Sign Up!</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

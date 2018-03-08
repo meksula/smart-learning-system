@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>User's profile</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/resources/styleProf.css}"/>
+</head>
+
+<body>
+<div class="main_div">
+	<div class="left_strip">
+		<img th:src="@{${meta.avatarPath}}" class="avatar" alt="Profile picture">
+		<hr>
+		<h4>About user:</h4>
+		<p>nickname: <span th:text="*{systemUser.nickname}"></span> </p>
+		<p>name: <span th:text="*{systemUser.name}"></span> </p>
+		<p>surname: <span th:text="*{systemUser.surname}"></p>
+		<p>email: <span th:text="*{systemUser.email}"></p>
+		<p>born year: <span th:text="*{systemUser.yearsOld}"></p>
+		<hr>
+		<h4>About you:</h4>
+		<p th:text="*{meta.aboutMe}"></p>
+		<p th:if="${meta.aboutMe == null}" th:text="#{desc}"></p>
+	</div>
+
+	<div class="content">
+		<h2 style="text-align:center;">Quote of the day</h2>
+		<p class="quote"><span th:utext="#{${quote}}"></span></p>
+		<br/><hr>
+		<h3 style="text-align:center;">your standard norm (%): </h3>
+		<h3 style="text-align:center;"><span th:text="${norm}">norm</span> </h3>
+		<hr><h2 style="text-align:center;">menu</h2>
+		<div style="text-align:center;">
+			<button type="button"><a th:href="@{/profile/${nickname}/scheduler}">make schedule</a></button>
+			<button type="button">Let's learn!</button>
+			<button type="button">learning history</button>
+			<button type="button">community</button>
+			<button type="button">settings</button>
+			<button type="button" ><a th:href="@{/logout}">log out</a></button>
+			<br/>
+		</div>
+		<hr>
+		<h2 style="text-align:center;">statistics</h2>
+		<div class="stats">
+			<p>all sessions: <span th:text="*{stats.allSessions}"></span></p>
+			<p>all days: <span th:text="*{stats.allDays}"></span></p>
+			<p style="color:green;">task done: <span th:text="*{stats.tasksDone}"></span></p>
+			<p style="color:red;">task planned: <span th:text="*{stats.tasksNotDoneYet}"></span></p>
+			<p>your best day: <span th:text="*{stats.bestDay}"></span></p>
+			<p>your worst day: <span th:text="*{stats.worstDay}"></span></p>
+			<p>total learning time: <span th:text="*{stats.totalLearningTime}"></span></p>
+			<p>everage learning time by day: <span th:text="*{stats.evgPerDay}"></span></p>
+			<p>everage learning time by week: <span th:text="*{stats.evgPerWeek}"></span></p>
+			<p>everage learning time by month: <span th:text="*{stats.evgPerMonth}"></span></p>
+			<p>favourite branch of knowlenge: <span th:text="*{stats.favourite}"></span></p>
+			<p>branches of science you working on: </p>
+		</div>
+	</div>
+	<footer style="color: aliceblue">
+		Today is: <span th:text="${#dates.createNow()}"></span>
+	</footer>
+</div>
+</body>
+</html>
+
+<!--
+Po kliknięciu odnośnika żądanie do adresu /logout zostanie przechwycone przez filtr
+Spring Security LogoutFilter . Użytkownik zostanie wylogowany, a klucze typu „pamiętaj
+mnie” zostaną usunięte. Po wylogowaniu przeglądarka przekieruje użytkownika na
+stronę /login?logout , aby dać mu możliwość ponownego zalogowania.
+
+-->

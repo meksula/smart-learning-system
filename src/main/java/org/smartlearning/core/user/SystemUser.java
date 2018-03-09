@@ -21,8 +21,7 @@ public class SystemUser {
     private String email;
     private String password;
 
-    private Statistics statistics;
-    private SystemUserMetaData systemUserMetaData;
+    private SystemUserStatistics statistics;
     private ArrayList<Notes> listOfNotes;
     private ArrayList<Task> listOfTasksToDo;
     private ArrayList<Task> listOfDoneTasks;
@@ -90,11 +89,11 @@ public class SystemUser {
         return userId;
     }
 
-    public Statistics getStatistics() {
+    public SystemUserStatistics getStatistics() {
         return statistics;
     }
 
-    public void setStatistics(Statistics statistics) {
+    public void setStatistics(SystemUserStatistics statistics) {
         this.statistics = statistics;
     }
 
@@ -122,11 +121,4 @@ public class SystemUser {
         this.listOfDoneTasks = listOfDoneTasks;
     }
 
-    public SystemUserMetaData getSystemUserMetaData() {
-        return systemUserMetaData;
-    }
-
-    public void setSystemUserMetaData(SystemUserMetaData systemUserMetaData) {
-        this.systemUserMetaData = systemUserMetaData;
-    }
 }

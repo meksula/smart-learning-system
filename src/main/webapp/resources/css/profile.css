@@ -8,9 +8,8 @@
 }
 
 body {
-    background-image: url("images/back.jpg");
+    background-image: url("backgroundProfile.jpg");
     height: 100%;
-    /*background-position: center;*/
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -43,14 +42,14 @@ h4 {
 }
 
 .content {
-    background-image:url("images/note.png");
+    background-color: #0f3854;
     border:2px solid white;
     display:inline-block;
     width:70%;
     min-height:800px;
     margin-left:30px;
     margin-left:30px;
-    color:black;
+    color:white;
     text-align:justify;
 }
 

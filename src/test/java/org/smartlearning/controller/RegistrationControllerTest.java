@@ -5,8 +5,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.smartlearning.configuration.RootConfig;
 import org.smartlearning.core.security.RegistrationProcess;
-import org.smartlearning.core.user.SystemUserForm;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
@@ -19,6 +17,11 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standaloneSetup;
+
+/**
+ * @Author Karol Meksuła
+ * 05-03-2018
+ **/
 
 @RunWith(SpringRunner.class)
 @ContextConfiguration(classes = RootConfig.class)

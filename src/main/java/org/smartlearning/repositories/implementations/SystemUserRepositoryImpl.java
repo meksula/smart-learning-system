@@ -2,6 +2,7 @@ package org.smartlearning.repositories.implementations;
 
 import org.smartlearning.core.user.SystemUser;
 import org.smartlearning.repositories.interfaces.SystemUserRepository;
+import org.smartlearning.repositories.temporary.TemporatySystemUserObjectContainer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcOperations;
 import org.springframework.jdbc.core.RowMapper;
@@ -11,10 +12,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 @Repository
-public class SystemUserImpl implements SystemUserRepository {
+public class SystemUserRepositoryImpl implements SystemUserRepository {
     private String FETCH_QUERY = "SELECT * FROM systemUsers WHERE username=?";
     private String SAVE_QUERY = "INSERT INTO systemUsers (username, name, surname, bornYear, email, password) values(?,?,?,?,?,?)";
-
     private JdbcOperations jdbcOperations;
 
     @Autowired
@@ -27,7 +27,7 @@ public class SystemUserImpl implements SystemUserRepository {
         return jdbcOperations.queryForObject(FETCH_QUERY, new SystemUserMapper(), username);
     }
 
-    private final static class SystemUserMapper implements RowMapper<SystemUser> {
+    private final class SystemUserMapper implements RowMapper<SystemUser> {
         @Override
         public SystemUser mapRow(ResultSet resultSet, int rowNum) throws SQLException {
             SystemUser systemUser = new SystemUser();
@@ -52,4 +52,5 @@ public class SystemUserImpl implements SystemUserRepository {
                 systemUser.getEmail(),
                 systemUser.getPassword());
     }
+
 }

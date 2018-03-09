@@ -6,45 +6,45 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>User's profile</title>
-    <link rel="stylesheet" type="text/css" th:href="@{/resources/styleProf.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/resources/css/profile.css}"/>
 </head>
 
 <body>
 <div class="main_div">
 	<div class="left_strip">
-		<img th:src="@{${meta.avatarPath}}" class="avatar" alt="Profile picture">
+		<img th:src="@{${meta.getAvatarPath()}}" class="avatar" alt="Profile picture">
 		<hr>
 		<h4>About user:</h4>
-		<p>nickname: <span th:text="*{systemUser.nickname}"></span> </p>
+		<p>nickname: <span th:text="*{systemUser.username}"></span> </p>
 		<p>name: <span th:text="*{systemUser.name}"></span> </p>
 		<p>surname: <span th:text="*{systemUser.surname}"></p>
 		<p>email: <span th:text="*{systemUser.email}"></p>
-		<p>born year: <span th:text="*{systemUser.yearsOld}"></p>
+		<p>born year: <span th:text="*{systemUser.bornYear}"></p>
 		<hr>
 		<h4>About you:</h4>
-		<p th:text="*{meta.aboutMe}"></p>
-		<p th:if="${meta.aboutMe == null}" th:text="#{desc}"></p>
+		<p th:text="${meta.getAboutMe()}"></p>
+		<p th:if="${meta.getAboutMe() == null}" th:text="#{desc}"></p>
 	</div>
 
 	<div class="content">
 		<h2 style="text-align:center;">Quote of the day</h2>
-		<p class="quote"><span th:utext="#{${quote}}"></span></p>
+		<p class="quote"><span th:utext="${quote}"></span></p>
 		<br/><hr>
-		<h3 style="text-align:center;">your standard norm (%): </h3>
+		<h3 style="text-align:center;">your current norm (%): </h3>
 		<h3 style="text-align:center;"><span th:text="${norm}">norm</span> </h3>
 		<hr><h2 style="text-align:center;">menu</h2>
 		<div style="text-align:center;">
-			<button type="button"><a th:href="@{/profile/${nickname}/scheduler}">make schedule</a></button>
-			<button type="button">Let's learn!</button>
-			<button type="button">learning history</button>
-			<button type="button">community</button>
-			<button type="button">settings</button>
-			<button type="button" ><a th:href="@{/logout}">log out</a></button>
+			<button type="button"><a th:href="@{/scheduler}">make schedule</a></button>
+			<button type="button"><a th:href="@{/stats}">statistics</a></button>
+			<button type="button"><a th:href="@{/history}">learning history</a></button>
+			<button type="button"><a th:href="@{/community}">community</a></button>
+			<button type="button"><a th:href="@{/settings}">settings</a></button>
+			<button type="button"><a th:href="@{/logout}">log out</a></button>
 			<br/>
 		</div>
 		<hr>
-		<h2 style="text-align:center;">statistics</h2>
-		<div class="stats">
+		<h2 style="text-align:center;">today in the world</h2>
+		<!--<div class="stats">
 			<p>all sessions: <span th:text="*{stats.allSessions}"></span></p>
 			<p>all days: <span th:text="*{stats.allDays}"></span></p>
 			<p style="color:green;">task done: <span th:text="*{stats.tasksDone}"></span></p>
@@ -57,7 +57,7 @@
 			<p>everage learning time by month: <span th:text="*{stats.evgPerMonth}"></span></p>
 			<p>favourite branch of knowlenge: <span th:text="*{stats.favourite}"></span></p>
 			<p>branches of science you working on: </p>
-		</div>
+		</div>-->
 	</div>
 	<footer style="color: aliceblue">
 		Today is: <span th:text="${#dates.createNow()}"></span>

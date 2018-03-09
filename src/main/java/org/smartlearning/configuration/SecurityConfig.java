@@ -63,7 +63,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .successHandler(new SuccessLoginHandler())
                     .and()
                     .logout()
-                    .logoutSuccessUrl("/logout")
+                    .logoutSuccessUrl("/")
                         .and()
                         .httpBasic()
                         .realmName("smartlearning")

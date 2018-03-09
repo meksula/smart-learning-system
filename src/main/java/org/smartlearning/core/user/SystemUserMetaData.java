@@ -6,7 +6,8 @@ package org.smartlearning.core.user;
  **/
 
 public class SystemUserMetaData {
-    private String avatarPath = "/resources/images/avatar.jpg";
+    private long userId;
+    private String avatarPath = "/resources/css/avatar.jpg";
     private String aboutMe;
 
     public String getAvatarPath() {
@@ -23,5 +24,13 @@ public class SystemUserMetaData {
 
     public void setAboutMe(String aboutMe) {
         this.aboutMe = aboutMe;
+    }
+
+    public void setUserId(long userId) {
+        this.userId = userId;
+    }
+
+    public long getUserId() {
+        return userId;
     }
 }

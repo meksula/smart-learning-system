@@ -1,6 +1,6 @@
 package org.smartlearning.core.security;
 
-import org.smartlearning.core.user.SystemUser;
+import org.smartlearning.core.user.SystemUserForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -14,8 +14,8 @@ public class PasswordEncoderHelperClass {
         this.passwordEncoder = passwordEncoder;
     }
 
-    public String encodeInsecurePassword(SystemUser systemUser) {
-        String uncodedPassword = systemUser.getPassword();
+    public String encodeInsecurePassword(SystemUserForm systemUserForm) {
+        String uncodedPassword = systemUserForm.getPassword();
         return passwordEncoder.encode(uncodedPassword);
     }
 }

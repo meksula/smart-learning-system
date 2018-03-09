@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>verification successful</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/resources/css/welcome.css}"/>
+
+</head>
+<body>
+    <div class="main_welcome">
+        <span th:if="${decission} == true"></span>
+        <p>verification successful</p><br/>
+        <span th:text="${username}"></span>
+        <p> now you can log in to application</p>
+        <br>
+        <a th:href="@{/login}">Log in</a>
+    </div>
+</body>
+</html>

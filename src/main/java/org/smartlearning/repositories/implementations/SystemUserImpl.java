@@ -11,9 +11,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 @Repository
-public class SystemUserDAO implements SystemUserRepository {
+public class SystemUserImpl implements SystemUserRepository {
     private String FETCH_QUERY = "SELECT * FROM systemUsers WHERE username=?";
-    private String SAVE_QUERY = "INSERT INTRO systemUsers (id, username, name, surname, bornYear, email, password) values(?,?,?,?,?,?)";
+    private String SAVE_QUERY = "INSERT INTO systemUsers (username, name, surname, bornYear, email, password) values(?,?,?,?,?,?)";
 
     private JdbcOperations jdbcOperations;
 
@@ -50,7 +50,6 @@ public class SystemUserDAO implements SystemUserRepository {
                 systemUser.getSurname(),
                 systemUser.getBornYear(),
                 systemUser.getEmail(),
-                systemUser.getPassword(),
-                systemUser);
+                systemUser.getPassword());
     }
 }

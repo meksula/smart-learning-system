@@ -24,11 +24,11 @@ public class SystemUserForm {
     private String confirmPassword;
 
     @NotNull
-    @Size(min=6, max=15)
+    @Size(min=2, max=15)
     private String name;
 
     @NotNull
-    @Size(min=6, max=15)
+    @Size(min=2, max=15)
     private String surname;
 
     @Min(1930)

@@ -70,7 +70,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                             .and()
                             .authorizeRequests()
                             .antMatchers(HttpMethod.POST, "/login").authenticated()
+                            .antMatchers(HttpMethod.POST, "/registration").permitAll()
                                 .anyRequest().permitAll();
+
+        httpSecurity.csrf().disable();
     }
 
 }

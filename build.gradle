@@ -21,9 +21,12 @@ dependencies {
     //compile group: 'org.apache.logging.log4j', name: 'log4j-slf4j-impl', version: '2.10.0'
 
     compile group: 'org.hibernate', name: 'hibernate-validator', version: '6.0.7.Final'
+    compile group: 'org.hibernate', name: 'hibernate-entitymanager', version: '5.2.14.Final'
+
     compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.8-dmr'
     compile group: 'org.apache.tomcat', name: 'tomcat-jdbc', version: '8.5.27'
     compile group: 'com.h2database', name: 'h2', version: '1.4.196'
+    //testCompile group: 'com.h2database', name: 'h2', version: '1.4.196'
     compile group: 'org.apache.commons', name: 'commons-dbcp2', version: '2.2.0'
 
     compile group: 'org.springframework', name: 'spring-core', version: '5.0.3.RELEASE'
@@ -33,7 +36,14 @@ dependencies {
     compile group: 'org.springframework', name: 'spring-webmvc', version: '5.0.3.RELEASE'
     compile group: 'org.springframework', name: 'spring-jdbc', version: '5.0.3.RELEASE'
     compile group: 'org.springframework', name: 'spring-aop', version: '5.0.3.RELEASE'
-    compile group: 'org.springframework.webflow', name: 'spring-webflow', version: '2.4.7.RELEASE'
+    compile group: 'org.aspectj', name: 'aspectjrt', version: '1.8.13'
+    compile group: 'org.aspectj', name: 'aspectjweaver', version: '1.8.13'
+
+    compile group: 'org.jsoup', name: 'jsoup', version: '1.11.2'
+
+    compile group: 'org.springframework.data', name: 'spring-data-commons', version: '2.0.5.RELEASE'
+
+    //compile group: 'org.springframework.webflow', name: 'spring-webflow', version: '2.4.7.RELEASE'
 
     compile group: 'org.springframework.security', name: 'spring-security-core', version: '5.0.1.RELEASE'
     compile group: 'org.springframework.security', name: 'spring-security-config', version: '5.0.1.RELEASE'
@@ -44,8 +54,7 @@ dependencies {
     compile group: 'org.thymeleaf', name: 'thymeleaf', version: '3.0.9.RELEASE'
     compile group: 'org.thymeleaf', name: 'thymeleaf-spring5', version: '3.0.9.RELEASE'
 
-    compile group: 'org.thymeleaf.extras', name: 'thymeleaf-extras-springsecurity4', version: '3.0.2.RELEASE'
-
+    //compile group: 'org.thymeleaf.extras', name: 'thymeleaf-extras-springsecurity4', version: '3.0.2.RELEASE'
 
     testCompile group: 'org.springframework', name: 'spring-test', version: '5.0.3.RELEASE'
     testCompile group: 'junit', name: 'junit', version: '4.12'

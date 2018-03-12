@@ -15,9 +15,9 @@
     <a th:href="@{/profile}">Back to homepage</a>
     <ul>
         <li th:each="note : ${notes}"
-            th:id="'note_' + ${note.getId()}">
-            <span th:text="${note.getDate()}">Note's date</span>
-            <div th:text="${note.getNote()}">Your note</div>
+            th:id="'note_' + ${note.getNoteId()}">
+            <span th:text="${note.getDateAndTime()}">Note's date</span>
+            <div th:text="${note.getText()}">Your note</div>
             <hr><br/>
         </li>
     </ul>

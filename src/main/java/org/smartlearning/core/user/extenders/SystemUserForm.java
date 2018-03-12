@@ -1,4 +1,4 @@
-package org.smartlearning.core.user;
+package org.smartlearning.core.user.extenders;
 
 import javax.validation.constraints.*;
 

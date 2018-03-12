@@ -1,6 +1,6 @@
 package org.smartlearning.repositories.interfaces;
 
-import org.smartlearning.core.user.SystemUserStatistics;
+import org.smartlearning.core.user.extenders.SystemUserStatistics;
 
 /**
  * @Author Karol Meksuła

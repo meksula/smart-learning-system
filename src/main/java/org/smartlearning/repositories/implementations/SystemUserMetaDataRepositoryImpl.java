@@ -1,6 +1,6 @@
 package org.smartlearning.repositories.implementations;
 
-import org.smartlearning.core.user.SystemUserMetaData;
+import org.smartlearning.core.user.extenders.SystemUserMetaData;
 import org.smartlearning.repositories.interfaces.SystemUserMetaDataRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcOperations;

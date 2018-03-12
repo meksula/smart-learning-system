@@ -1,6 +1,6 @@
 package org.smartlearning.repositories.interfaces;
 
-import org.smartlearning.core.user.SystemUserMetaData;
+import org.smartlearning.core.user.extenders.SystemUserMetaData;
 
 /**
  * @Author Karol Meksuła

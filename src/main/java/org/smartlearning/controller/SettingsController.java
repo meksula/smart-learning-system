@@ -8,19 +8,24 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
 
+/**
+ * @Author Karol Meksuła
+ * 07-03-2018
+ **/
+
 @Controller
 @RequestMapping("/settings")
 public class SettingsController {
 
     @GetMapping
-    public String stats(Model model, HttpServletRequest httpServletRequest) {
+    public String settings(Model model, HttpServletRequest httpServletRequest) {
         String username = httpServletRequest.getUserPrincipal().getName();
         model.addAttribute("username", username);
         return "redirect:/settings/{username}";
     }
 
     @GetMapping("/{username}")
-    public String statsView(@PathVariable("username")String username) {
+    public String settingsView(@PathVariable("username")String username) {
         return "settings";
     }
 }

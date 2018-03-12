@@ -11,4 +11,6 @@ public interface SystemUserRepository {
     SystemUser fetchByUsername(String username);
 
     void saveSystemUser(SystemUser systemUser);
+
+    void deleteSystemUser(long userId);
 }

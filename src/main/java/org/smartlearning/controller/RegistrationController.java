@@ -1,7 +1,7 @@
 package org.smartlearning.controller;
 
 import org.smartlearning.core.security.RegistrationProcess;
-import org.smartlearning.core.user.SystemUserForm;
+import org.smartlearning.core.user.extenders.SystemUserForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,6 +10,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.validation.Valid;
+
+/**
+ * @Author Karol Meksuła
+ * 07-03-2018
+ **/
 
 @Controller
 @RequestMapping("/registration")

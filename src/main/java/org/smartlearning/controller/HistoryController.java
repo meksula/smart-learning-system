@@ -8,19 +8,24 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
 
+/**
+ * @Author Karol Meksuła
+ * 07-03-2018
+ **/
+
 @Controller
 @RequestMapping("/history")
 public class HistoryController {
 
     @GetMapping
-    public String stats(Model model, HttpServletRequest httpServletRequest) {
+    public String history(Model model, HttpServletRequest httpServletRequest) {
         String username = httpServletRequest.getUserPrincipal().getName();
         model.addAttribute("username", username);
         return "redirect:/history/{username}";
     }
 
     @GetMapping("/{username}")
-    public String statsView(@PathVariable("username")String username) {
+    public String historyView(@PathVariable("username")String username) {
         return "history";
     }
 }

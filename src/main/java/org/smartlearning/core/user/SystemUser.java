@@ -1,11 +1,7 @@
 package org.smartlearning.core.user;
 
-import org.smartlearning.core.content.Notes;
-import org.smartlearning.core.content.Task;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+import org.smartlearning.core.user.extenders.SystemUserStatistics;
+import org.smartlearning.core.user.extenders.TasksHistory;
 
 /**
  * @Author Karol Meksuła
@@ -22,16 +18,7 @@ public class SystemUser {
     private String password;
 
     private SystemUserStatistics statistics;
-    private ArrayList<Notes> listOfNotes;
-    private ArrayList<Task> listOfTasksToDo;
-    private ArrayList<Task> listOfDoneTasks;
-
-    public Map<String, String> getUsernameAndUserId() {
-        Map<String, String> nicknameAndUserId = new HashMap<>();
-        nicknameAndUserId.put("username", this.username);
-        nicknameAndUserId.put("userId", String.valueOf(this.userId));
-        return nicknameAndUserId;
-    }
+    private TasksHistory listOfDoneTasks;
 
     public String getUsername() {
         return username;
@@ -95,30 +82,6 @@ public class SystemUser {
 
     public void setStatistics(SystemUserStatistics statistics) {
         this.statistics = statistics;
-    }
-
-    public ArrayList<Notes> getListOfNotes() {
-        return listOfNotes;
-    }
-
-    public void setListOfNotes(ArrayList<Notes> listOfNotes) {
-        this.listOfNotes = listOfNotes;
-    }
-
-    public ArrayList<Task> getListOfTasksToDo() {
-        return listOfTasksToDo;
-    }
-
-    public void setListOfTasksToDo(ArrayList<Task> listOfTasksToDo) {
-        this.listOfTasksToDo = listOfTasksToDo;
-    }
-
-    public ArrayList<Task> getListOfDoneTasks() {
-        return listOfDoneTasks;
-    }
-
-    public void setListOfDoneTasks(ArrayList<Task> listOfDoneTasks) {
-        this.listOfDoneTasks = listOfDoneTasks;
     }
 
 }

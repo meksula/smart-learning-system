@@ -1,7 +1,7 @@
 package org.smartlearning.core.security;
 
 import org.smartlearning.core.user.SystemUser;
-import org.smartlearning.core.user.SystemUserForm;
+import org.smartlearning.core.user.extenders.SystemUserForm;
 import org.smartlearning.repositories.interfaces.SystemUserRepository;
 import org.smartlearning.repositories.interfaces.SystemUserRepositoryInfoVerificator;
 import org.springframework.beans.factory.annotation.Autowired;

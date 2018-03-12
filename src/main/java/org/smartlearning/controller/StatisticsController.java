@@ -8,6 +8,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
 
+/**
+ * @Author Karol Meksuła
+ * 07-03-2018
+ **/
+
 @Controller
 @RequestMapping("/stats")
 public class StatisticsController {

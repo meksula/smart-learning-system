@@ -1,6 +1,6 @@
 package org.smartlearning.core.security;
 
-import org.smartlearning.core.user.SystemUserForm;
+import org.smartlearning.core.user.extenders.SystemUserForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;

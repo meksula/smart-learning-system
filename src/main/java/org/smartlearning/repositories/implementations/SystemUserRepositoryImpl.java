@@ -2,7 +2,6 @@ package org.smartlearning.repositories.implementations;
 
 import org.smartlearning.core.user.SystemUser;
 import org.smartlearning.repositories.interfaces.SystemUserRepository;
-import org.smartlearning.repositories.temporary.TemporatySystemUserObjectContainer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcOperations;
 import org.springframework.jdbc.core.RowMapper;
@@ -13,8 +12,9 @@ import java.sql.SQLException;
 
 @Repository
 public class SystemUserRepositoryImpl implements SystemUserRepository {
-    private String FETCH_QUERY = "SELECT * FROM systemUsers WHERE username=?";
-    private String SAVE_QUERY = "INSERT INTO systemUsers (username, name, surname, bornYear, email, password) values(?,?,?,?,?,?)";
+    private final String FETCH_QUERY = "SELECT * FROM systemUsers WHERE username=?";
+    private final String SAVE_QUERY = "INSERT INTO systemUsers (username, name, surname, bornYear, email, password) values(?,?,?,?,?,?)";
+    private final String DELETE_QUERY = "DELETE FROM systemUsers WHERE id=?";
     private JdbcOperations jdbcOperations;
 
     @Autowired
@@ -51,6 +51,11 @@ public class SystemUserRepositoryImpl implements SystemUserRepository {
                 systemUser.getBornYear(),
                 systemUser.getEmail(),
                 systemUser.getPassword());
+    }
+
+    @Override
+    public void deleteSystemUser(long userId) {
+        jdbcOperations.update(DELETE_QUERY, userId);
     }
 
 }

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>Do task</title>
+
+    <style>
+        html,body {
+            height: 100%;
+        }
+        body {
+            background: #0f3854;
+            background: radial-gradient(ellipse at center,  #0a2e38  0%, #000000 70%);
+            background-size: 100%;
+        }
+        p {
+            margin: 0;
+            padding: 0;
+        }
+        #clock {
+            font-family: 'Share Tech Mono', monospace;
+            color: #ffffff;
+            text-align: center;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            color: #daf6ff;
+            text-shadow: 0 0 20px rgba(10, 175, 230, 1),  0 0 20px rgba(10, 175, 230, 0);
+        .time {
+            letter-spacing: 0.05em;
+            font-size: 80px;
+            padding: 5px 0;
+        }
+        .date {
+            letter-spacing: 0.1em;
+            font-size: 24px;
+        }
+        .text {
+            letter-spacing: 0.1em;
+            font-size: 12px;
+            padding: 20px 0 0;
+        }
+    </style>
+
+</head>
+<body onload="show()">
+    <div>
+        <a style="color: white" th:href="@{/profile}">go home</a>
+        <a style="color: white" th:href="@{/scheduler}">go manager</a>
+        <hr>
+        <span th:text="${id}"></span>
+        <p style="color:white; font-size: 18px">Current task: </p>
+        <span style="color: white; font-size: 18px; align-content: center" th:text="${task.getTitle()}"></span>
+        <hr>
+        <br/>
+
+        <form th:action="@{/learn/start}" method="post">
+            <input type="submit" value="Start">Start</input>
+        </form>
+
+        <form th:action="@{/learn/stop}" method="post">
+            <input type="submit" value="Stop & summary">Stop & summary</input>
+        </form>
+
+        <div th:if="${summary != null}">
+            <ul>
+                <li th:each="item : ${summary}" th:text="${item}"></li>
+            </ul>
+        </div>
+
+        <div th:if="${summary != null}">
+            <h1>Result</h1>
+            <ul>
+                <th:block th:object="${summary}">
+                    <li th:each="item : *{item}" th:text="${item}">Item description here...</li>
+                </th:block>
+            </ul>
+        </div>
+
+        <hr>
+        <br/>
+        <br/>
+        <div style="color: white">Time: <span id="time"></span></div>
+        <input type="button" value="start" onclick="start();">
+        <input type="button" value="stop" onclick="stop();">
+
+        <script>
+            var	clsStopwatch = function() {
+                var	startAt	= 0;
+                var	lapTime	= 0;
+
+                var	now	= function() {
+                    return (new Date()).getTime();
+                };
+
+                this.start = function() {
+                    startAt	= startAt ? startAt : now();
+                };
+
+                this.stop = function() {
+                    lapTime	= startAt ? lapTime + now() - startAt : lapTime;
+                    startAt	= 0;
+                };
+
+                this.time = function() {
+                    return lapTime + (startAt ? now() - startAt : 0);
+                };
+            };
+
+            var x = new clsStopwatch();
+            var $time;
+            var clocktimer;
+
+            function pad(num, size) {
+                var s = "0000" + num;
+                return s.substr(s.length - size);
+            }
+
+            function formatTime(time) {
+                var h = m = s = ms = 0;
+                var newTime = '';
+
+                h = Math.floor( time / (60 * 60 * 1000) );
+                time = time % (60 * 60 * 1000);
+                m = Math.floor( time / (60 * 1000) );
+                time = time % (60 * 1000);
+                s = Math.floor( time / 1000 );
+                ms = time % 1000;
+
+                newTime = pad(h, 2) + ':' + pad(m, 2) + ':' + pad(s, 2) + ':' + pad(ms, 3);
+                return newTime;
+            }
+
+            function show() {
+                $time = document.getElementById('time');
+                update();
+            }
+
+            function update() {
+                $time.innerHTML = formatTime(x.time());
+            }
+
+            function start() {
+                clocktimer = setInterval("update()", 1);
+                x.start();
+            }
+
+            function stop() {
+                x.stop();
+                clearInterval(clocktimer);
+            }
+
+            function reset() {
+                stop();
+                x.reset();
+                update();
+            }
+        </script>
+    </div>
+</body>
+</html>

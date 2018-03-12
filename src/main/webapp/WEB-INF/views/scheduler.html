@@ -8,7 +8,7 @@
     <meta name="author" content="Karol Meksuła"/>
 
     <title>scheduler</title>
-    <link rel="stylesheet" type="text/css" th:href="@{/resources/scheduler.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/resources/css/scheduler.css}"/>
     <style>
         .collapsible {
             background-color: #777;
@@ -45,7 +45,7 @@
 
 <div class="topnav">
     <a th:href="@{/profile}">Home</a>
-    <a th:href="@{/scheduler}">Task manager</a>
+    <a th:href="@{/scheduler}">Scheduler</a>
     <a th:href="@{/history}">History</a>
     <a th:href="@{/stats}">Statistics</a>
     <a th:href="@{/notes}">Notes</a>
@@ -65,19 +65,16 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr th:if="${tasks.isEmpty()}">
+                <tr th:if="${taskList.isEmpty()}">
                     <td colspan="3">No tasks</td>
                 </tr>
-                <tr th:each="task : ${tasks}" th:with="value = ${task.getTaskNumber()}">
-                    <td th:text="${task.getTaskNumber()}"></td>
+                <tr th:each="task : ${taskList}" th:with="value = ${task.getTaskId()}">
+                    <td th:text="${task.getTaskId()}"></td>
                     <td th:text="${task.getTitle()}"> </td>
-                    <td th:text="${task.getSpendTimeAtTaskInMinutes()}"></td>
-                    <td th:text="${task.getAddedDate()}"></td>
+                    <td th:text="${task.getSpendTime()}"></td>
+                    <td th:text="${task.getStartDate()}"></td>
                     <td>
-                        <!--<a th:href="@{/doTask}">
-                            <span th:text="${value}"></span>
-                        </a>-->
-                        <form th:action="@{/taskId}" th:object="${taskIDHandler}" method="post">
+                        <form th:action="@{/scheduler/learn}" th:object="${idHandler}" method="post">
                             <input type="hidden" th:value="${value}" name="id">
                             <input type="submit"> Do it!</input>
                         </form>
@@ -89,9 +86,10 @@
                 <h2>Add new task</h2>
                 <button class="collapsible">Open form</button>
                 <div class="content">
-                    <form action="#" th:action="@{/appendTask}" th:object="${nextTask}" method="post">
+                    <form action="#" th:action="@{/scheduler/addTask}" th:object="${task}" method="post">
                         <p>Title: <input type="text" th:field="*{title}" /></p>
                         <p>Description: <input type="text" th:field="*{description}" /></p>
+                        <p>Branch of Science: <input type="text" th:field="*{branchOfScience}" /></p>
                         <input type="submit"/>
                     </form>
                 </div>
@@ -118,11 +116,8 @@
     <div class="rightcolumn">
         <div class="card">
             <h2>Quick notes</h2>
-            <!--<p input type="text" th:field="*{note}"> <textarea name="text" rows="34" cols="32"></textarea></p>
-            <button type="submit" th:action="@{/getNote}" th:method="post">Save note</button>-->
-            <form action="#" method = "POST" th:action="@{/profile/{nickname}/scheduler}" th:object = "${notes}">
-                <!--<input type = "text" th:field = "${title}" />-->
-                <textarea rows = "34" cols = "32" type="text" name="note" th:value="*{note}"></textarea>
+            <form action="#" method = "POST" th:action="@{/scheduler/save}" th:object = "${notes}">
+                <textarea rows = "34" cols = "32" type="text" name="note" th:field="*{text}"></textarea>
                 <input type = "submit" value = "Save note" /></br>
 
             </form>

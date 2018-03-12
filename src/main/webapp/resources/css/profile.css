@@ -42,7 +42,9 @@ h4 {
 }
 
 .content {
-    background-color: #0f3854;
+    background: midnightblue;
+    background: radial-gradient(ellipse at center,  #0a2e38  0%, #000000 70%);
+    background-size: 100%;
     border:2px solid white;
     display:inline-block;
     width:70%;

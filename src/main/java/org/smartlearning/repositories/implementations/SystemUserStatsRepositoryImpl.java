@@ -1,6 +1,6 @@
 package org.smartlearning.repositories.implementations;
 
-import org.smartlearning.core.user.SystemUserStatistics;
+import org.smartlearning.core.user.extenders.SystemUserStatistics;
 import org.smartlearning.repositories.interfaces.SystemUserStatsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcOperations;

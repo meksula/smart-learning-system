@@ -38,6 +38,7 @@ public class SystemUserMetaDataRepositoryImpl implements SystemUserMetaDataRepos
             systemUserMetaData.setUserId(rs.getInt(2));
             systemUserMetaData.setAvatarPath(rs.getString(3));
             systemUserMetaData.setAboutMe(rs.getString(4));
+            systemUserMetaData.setLinks(rs.getString(5));
             return systemUserMetaData;
         }, userId);
 

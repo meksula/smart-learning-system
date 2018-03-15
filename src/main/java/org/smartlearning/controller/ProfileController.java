@@ -1,6 +1,7 @@
 package org.smartlearning.controller;
 
 import org.smartlearning.core.content.Quote;
+import org.smartlearning.core.content.websites.ArticleFetcher;
 import org.smartlearning.core.user.SystemUser;
 import org.smartlearning.core.user.extenders.SystemUserMetaData;
 import org.smartlearning.repositories.interfaces.SystemUserMetaDataRepository;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
 
 /**
  * @Author Karol Meksuła
@@ -28,6 +30,12 @@ public class ProfileController {
     private SystemUserMetaDataRepository metaDataRepository;
     private String username;
     private BasicDataHandler basicDataHandler;
+    private ArticleFetcher articleFetcher;
+
+    @Autowired
+    public void setArticleFetcher(ArticleFetcher articleFetcher) {
+        this.articleFetcher = articleFetcher;
+    }
 
     @Autowired
     public void setBasicDataHandler(BasicDataHandler basicDataHandler) {
@@ -52,13 +60,14 @@ public class ProfileController {
     }
 
     @GetMapping(value = "/{username}")
-    public String mainProfile(@PathVariable("username") String username, Model model) {
+    public String mainProfile(@PathVariable("username") String username, Model model) throws IOException {
         SystemUser systemUser = systemUserRepository.fetchByUsername(username);
         SystemUserMetaData systemUserMetaData = metaDataRepository.fetchMetaData(systemUser.getUserId());
         basicDataHandler.userId = systemUser.getUserId();
         basicDataHandler.username = systemUser.getUsername();
         model.addAttribute("systemUser", systemUser);
         model.addAttribute("meta", systemUserMetaData);
+        model.addAttribute("article", articleFetcher.giveMeOneArticle(systemUserMetaData));
         model.addAttribute("quote", Quote.quoteByDay());
         model.addAttribute("norm", 56); //TODO
         return "profile";

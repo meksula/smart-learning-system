@@ -1,7 +1,5 @@
 package org.smartlearning.controller;
 
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.smartlearning.core.content.Task;
@@ -15,7 +13,6 @@ import org.springframework.stereotype.Component;
 @Aspect
 @Component
 public class AspectTimeCountLogic {
-    private final Logger logger = LogManager.getLogger(AspectTimeCountLogic.class);
     private BasicDataHandler basicDataHandler;
     private TasksToDoRepository tasksToDoRepository;
     private TimerTask timerTask;

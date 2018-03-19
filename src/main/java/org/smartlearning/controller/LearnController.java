@@ -1,6 +1,6 @@
 package org.smartlearning.controller;
 
-import org.smartlearning.core.content.Task;
+import org.smartlearning.domain.content.Task;
 import org.smartlearning.repositories.interfaces.TasksToDoRepository;
 import org.smartlearning.repositories.temporary.BasicDataHandler;
 import org.springframework.beans.factory.annotation.Autowired;

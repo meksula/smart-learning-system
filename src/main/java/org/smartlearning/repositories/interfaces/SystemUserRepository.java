@@ -1,6 +1,6 @@
 package org.smartlearning.repositories.interfaces;
 
-import org.smartlearning.core.user.SystemUser;
+import org.smartlearning.domain.user.SystemUser;
 
 /**
  * @Author Karol Meksuła

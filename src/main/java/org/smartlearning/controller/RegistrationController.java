@@ -1,7 +1,7 @@
 package org.smartlearning.controller;
 
-import org.smartlearning.core.security.RegistrationProcess;
-import org.smartlearning.core.user.extenders.SystemUserForm;
+import org.smartlearning.domain.security.RegistrationProcess;
+import org.smartlearning.domain.user.extenders.SystemUserForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

@@ -4,7 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.smartlearning.configuration.RootConfig;
-import org.smartlearning.core.security.RegistrationProcess;
+import org.smartlearning.domain.security.RegistrationProcess;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;

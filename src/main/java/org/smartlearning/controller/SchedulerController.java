@@ -1,7 +1,7 @@
 package org.smartlearning.controller;
 
-import org.smartlearning.core.content.Notes;
-import org.smartlearning.core.content.Task;
+import org.smartlearning.domain.content.Notes;
+import org.smartlearning.domain.content.Task;
 import org.smartlearning.repositories.interfaces.NotesRepository;
 import org.smartlearning.repositories.interfaces.TasksToDoRepository;
 import org.smartlearning.repositories.temporary.BasicDataHandler;

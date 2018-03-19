@@ -2,7 +2,7 @@ package org.smartlearning.repositories.temporary;
 
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
-import org.smartlearning.core.user.SystemUser;
+import org.smartlearning.domain.user.SystemUser;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;

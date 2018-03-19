@@ -1,6 +1,6 @@
 package org.smartlearning.repositories.implementations;
 
-import org.smartlearning.core.content.Task;
+import org.smartlearning.domain.content.Task;
 import org.smartlearning.repositories.interfaces.TasksToDoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcOperations;

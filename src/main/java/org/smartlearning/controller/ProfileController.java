@@ -1,8 +1,8 @@
 package org.smartlearning.controller;
 
-import org.smartlearning.core.content.websites.ArticleFetcher;
-import org.smartlearning.core.user.SystemUser;
-import org.smartlearning.core.user.extenders.SystemUserMetaData;
+import org.smartlearning.domain.content.websites.ArticleFetcher;
+import org.smartlearning.domain.user.SystemUser;
+import org.smartlearning.domain.user.extenders.SystemUserMetaData;
 import org.smartlearning.repositories.interfaces.SystemUserMetaDataRepository;
 import org.smartlearning.repositories.interfaces.SystemUserRepository;
 import org.smartlearning.repositories.temporary.BasicDataHandler;

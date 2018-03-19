@@ -5,13 +5,11 @@ import org.junit.runner.RunWith;
 import org.smartlearning.configuration.RootConfig;
 import org.smartlearning.configuration.WebApplicationInitializer;
 import org.smartlearning.configuration.WebApplicationServletConfiguration;
-import org.smartlearning.core.content.Task;
+import org.smartlearning.domain.content.Task;
 import org.smartlearning.repositories.interfaces.TasksToDoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-
-import static org.junit.Assert.*;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {WebApplicationInitializer.class,

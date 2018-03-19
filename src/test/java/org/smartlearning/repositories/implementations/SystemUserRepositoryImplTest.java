@@ -5,8 +5,7 @@ import org.apache.log4j.Logger;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.smartlearning.configuration.RootConfig;
-import org.smartlearning.configuration.WebApplicationServletConfiguration;
-import org.smartlearning.core.user.SystemUser;
+import org.smartlearning.domain.user.SystemUser;
 import org.smartlearning.repositories.interfaces.SystemUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -22,7 +21,7 @@ import static org.junit.Assert.*;
  * */
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = {RootConfig.class, WebApplicationServletConfiguration.class})
+@ContextConfiguration(classes = {RootConfig.class})
 public class SystemUserRepositoryImplTest {
     private final Logger logger = LogManager.getLogger(SystemUserRepositoryImplTest.class);
     private final String USERNAME = "admin";

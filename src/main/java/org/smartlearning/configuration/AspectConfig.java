@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 @Configuration
-@ComponentScan
+@ComponentScan(basePackages = "org.smartlearning.aspects")
 @EnableAspectJAutoProxy
 public class AspectConfig {
 }

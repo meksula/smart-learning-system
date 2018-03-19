@@ -2,7 +2,7 @@ package org.smartlearning.repositories.temporary;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.smartlearning.core.user.SystemUser;
+import org.smartlearning.domain.user.SystemUser;
 
 import static org.junit.Assert.*;
 

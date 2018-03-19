@@ -1,6 +1,6 @@
 package org.smartlearning.configuration;
 
-import org.smartlearning.core.user.SystemUser;
+import org.smartlearning.domain.user.SystemUser;
 import org.smartlearning.repositories.interfaces.SystemUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;

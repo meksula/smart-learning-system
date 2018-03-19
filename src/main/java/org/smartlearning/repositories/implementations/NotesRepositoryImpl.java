@@ -8,6 +8,12 @@ import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 
+/**
+ * @Author
+ * Karol Meksuła
+ * 27-02-2018
+ * */
+
 @Repository
 public class NotesRepositoryImpl implements NotesRepository {
     private JdbcOperations jdbcOperations;
@@ -31,7 +37,6 @@ public class NotesRepositoryImpl implements NotesRepository {
                 notes.setDateAndTime(rs.getString("dateAndTime"));
                 notesList.add(notes);
             } while (rs.next());
-
             return notesList;
         }, userId);
 

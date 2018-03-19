@@ -22,7 +22,6 @@ import javax.sql.DataSource;
  * 27-02-2018
  **/
 
-
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
@@ -47,7 +46,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(AuthenticationManagerBuilder authentication) throws Exception {
         authentication.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
-
     }
 
     @Override
@@ -63,7 +61,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .successHandler(new SuccessLoginHandler())
                     .and()
                     .logout()
-                    .logoutSuccessUrl("/")
+                    .logoutSuccessUrl("/logout")
                         .and()
                         .httpBasic()
                         .realmName("smartlearning")

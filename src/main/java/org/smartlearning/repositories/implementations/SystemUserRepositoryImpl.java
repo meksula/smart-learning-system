@@ -10,11 +10,17 @@ import org.springframework.stereotype.Repository;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+/**
+ * @Author
+ * Karol Meksuła
+ * 27-02-2018
+ * */
+
 @Repository
 public class SystemUserRepositoryImpl implements SystemUserRepository {
-    private final String FETCH_QUERY = "SELECT * FROM systemUsers WHERE username=?";
-    private final String SAVE_QUERY = "INSERT INTO systemUsers (username, name, surname, bornYear, email, password) values(?,?,?,?,?,?)";
-    private final String DELETE_QUERY = "DELETE FROM systemUsers WHERE id=?";
+    private final String FETCH_QUERY = "SELECT * FROM SystemUser WHERE username=?";
+    private final String SAVE_QUERY = "INSERT INTO SystemUser (username, name, surname, bornYear, email, password) values(?,?,?,?,?,?)";
+    private final String DELETE_QUERY = "DELETE FROM SystemUser WHERE id=?";
     private JdbcOperations jdbcOperations;
 
     @Autowired

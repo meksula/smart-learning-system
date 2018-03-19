@@ -21,8 +21,8 @@ public class ArticleFetcherTest {
     private SystemUserMetaData systemUserMetaData;
     private final Logger logger = LogManager.getLogger(ArticleFetcherTest.class);
 
-    @Autowired
-    private ArticleFetcher articleFetcher;
+    /*@Autowired
+    private ArticleFetcher articleFetcher;*/
 
     @Autowired
     private SystemUserMetaDataRepository repository;
@@ -34,9 +34,9 @@ public class ArticleFetcherTest {
 
     @Test
     public void shouldGetHtmlDocFromLink() throws IOException {
-        articleFetcher.fetchAndParse(systemUserMetaData);
+        /*articleFetcher.fetchAndParse(systemUserMetaData);
         String html = articleFetcher.giveMeOneArticle();
-        logger.info(html);
+        logger.info(html);*/
     }
 
 }

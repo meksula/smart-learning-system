@@ -1,13 +1,18 @@
 package org.smartlearning.repositories.temporary;
 
-public class IdHandler {
-    private int id;
+/**
+ * @Author Karol Meksuła
+ * 07-03-2018
+ **/
 
-    public int getId() {
+public class IdHandler {
+    private long id;
+
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 }

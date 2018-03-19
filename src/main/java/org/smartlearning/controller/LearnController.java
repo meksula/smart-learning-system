@@ -33,6 +33,7 @@ public class LearnController {
     @GetMapping("/{id}")
     public String learn(@PathVariable("id") int id, Model model) {
         this.id = id;
+        System.out.println("ID: " + id);
         Task task = tasksToDoRepository.fetchOneTaskByTaskId(id);
         basicDataHandler.setTaskId(id);
         model.addAttribute("task", task);

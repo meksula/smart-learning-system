@@ -9,11 +9,17 @@ import org.springframework.stereotype.Repository;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+/**
+ * @Author
+ * Karol Meksuła
+ * 27-02-2018
+ * */
+
 @Repository
 public class SystemUserRepositoryInfoVerificatorImpl implements SystemUserRepositoryInfoVerificator {
     private JdbcOperations jdbcOperations;
-    private final String SEARCH_BY_USERNAME = "SELECT username FROM systemUsers WHERE username=?";
-    private final String SEARCH_BY_EMAIL = "SELECT email FROM systemUsers WHERE email=?";
+    private final String SEARCH_BY_USERNAME = "SELECT username FROM SystemUser WHERE username=?";
+    private final String SEARCH_BY_EMAIL = "SELECT email FROM SystemUser WHERE email=?";
 
 
     public SystemUserRepositoryInfoVerificatorImpl(JdbcOperations jdbcOperations) {

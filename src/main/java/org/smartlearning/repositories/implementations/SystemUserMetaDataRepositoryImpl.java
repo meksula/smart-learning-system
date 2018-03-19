@@ -17,7 +17,6 @@ public class SystemUserMetaDataRepositoryImpl implements SystemUserMetaDataRepos
     private final String SAVE_QUERY = "INSERT INTO metadata (userId, avatarPath, aboutMe) VALUES(?,?,?)";
     private final String FETCH_QUERY = "SELECT * FROM metadata WHERE userId=?";
 
-
     @Autowired
     public void setJdbcOperations(JdbcOperations jdbcOperations) {
         this.jdbcOperations = jdbcOperations;

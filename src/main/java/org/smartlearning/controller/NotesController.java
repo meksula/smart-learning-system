@@ -43,7 +43,7 @@ public class NotesController {
 
     @GetMapping("/{username}")
     public String statsView(@PathVariable("username")String username, Model model) {
-        ArrayList<Notes> notes = notesRepository.fetchListOfNotesByUserId(basicDataHandler.userId);
+        ArrayList<Notes> notes = notesRepository.fetchListOfNotesByUserId(basicDataHandler.getUserId());
         model.addAttribute("notes", notes);
         System.out.println("Rozmiar 'notes': " + notes.size());
         return "notes";

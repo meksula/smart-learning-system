@@ -9,6 +9,12 @@ import org.springframework.stereotype.Repository;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @Author
+ * Karol Meksuła
+ * 27-02-2018
+ * */
+
 @Repository
 public class TasksToDoRepositoryImpl implements TasksToDoRepository {
     private JdbcOperations jdbcOperations;

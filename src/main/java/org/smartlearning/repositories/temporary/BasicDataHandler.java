@@ -9,8 +9,8 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class BasicDataHandler {
-    public long userId;
-    public String username;
+    private long userId;
+    private String username;
     private int taskId;
 
     public int getTaskId() {
@@ -19,5 +19,21 @@ public class BasicDataHandler {
 
     public void setTaskId(int taskId) {
         this.taskId = taskId;
+    }
+
+    public long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(long userId) {
+        this.userId = userId;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 }

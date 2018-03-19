@@ -11,17 +11,18 @@ import java.time.LocalDate;
  * 10-03-2018
  **/
 
-@Component
+//TODO to będzie przeniesione do aspektu
+/*@Component
 public class Quote {
-    private static QuoteRepository quoteRepository;
+    private QuoteRepository quoteRepository;
 
     @Autowired
     public void setQuoteRepository(QuoteRepository quoteRepository) {
         this.quoteRepository = quoteRepository;
     }
 
-    public static String quoteByDay() {
+    public String quoteByDay() {
         int dayNumber = LocalDate.now().getDayOfMonth();
         return quoteRepository.fetchQuoteByDay(dayNumber);
     }
-}
+}*/

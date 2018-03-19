@@ -59,14 +59,15 @@ public class SchedulerController {
     public String shedulerView(@PathVariable("username")String username, Model model) {
         model.addAttribute("notes", new Notes());
         model.addAttribute("task", new Task());
-        model.addAttribute("taskList", tasksToDoRepository.fetchTasksToDo(basicDataHandler.userId));
+        model.addAttribute("taskList",
+                tasksToDoRepository.fetchTasksToDo(basicDataHandler.getUserId()));
         model.addAttribute("idHandler", new IdHandler());
         return "scheduler";
     }
 
     @PostMapping("/save")
     public String saveNote(@ModelAttribute("notes") Notes notes, String text) {
-        notes.setUserId(basicDataHandler.userId);
+        notes.setUserId(basicDataHandler.getUserId());
         notes.setDateAndTime(LocalDate.now().toString());
         notesRepository.saveNote(notes);
 
@@ -75,7 +76,7 @@ public class SchedulerController {
 
     @PostMapping("/addTask")
     public String saveTask(@ModelAttribute("task") Task task) {
-        task.setUserId(basicDataHandler.userId);
+        task.setUserId(basicDataHandler.getUserId());
         task.setStartDate(LocalDate.now().toString());
         tasksToDoRepository.saveTaskToDo(task);
         return "redirect:/scheduler/{username}";

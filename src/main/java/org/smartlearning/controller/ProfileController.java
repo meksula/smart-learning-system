@@ -1,6 +1,5 @@
 package org.smartlearning.controller;
 
-import org.smartlearning.core.content.Quote;
 import org.smartlearning.core.content.websites.ArticleFetcher;
 import org.smartlearning.core.user.SystemUser;
 import org.smartlearning.core.user.extenders.SystemUserMetaData;
@@ -30,12 +29,12 @@ public class ProfileController {
     private SystemUserMetaDataRepository metaDataRepository;
     private String username;
     private BasicDataHandler basicDataHandler;
-    private ArticleFetcher articleFetcher;
+    //private ArticleFetcher articleFetcher;
 
-    @Autowired
+    /*@Autowired
     public void setArticleFetcher(ArticleFetcher articleFetcher) {
         this.articleFetcher = articleFetcher;
-    }
+    }*/
 
     @Autowired
     public void setBasicDataHandler(BasicDataHandler basicDataHandler) {
@@ -45,6 +44,11 @@ public class ProfileController {
     @Autowired
     public void setRepository(SystemUserRepository systemUserRepository) {
         this.systemUserRepository = systemUserRepository;
+    }
+
+    @Autowired
+    public void setMetaDataRepository(SystemUserMetaDataRepository metaDataRepository) {
+        this.metaDataRepository = metaDataRepository;
     }
 
     @ModelAttribute("username")
@@ -63,18 +67,14 @@ public class ProfileController {
     public String mainProfile(@PathVariable("username") String username, Model model) throws IOException {
         SystemUser systemUser = systemUserRepository.fetchByUsername(username);
         SystemUserMetaData systemUserMetaData = metaDataRepository.fetchMetaData(systemUser.getUserId());
-        basicDataHandler.userId = systemUser.getUserId();
-        basicDataHandler.username = systemUser.getUsername();
+        basicDataHandler.setUserId(systemUser.getUserId());
+        basicDataHandler.setUsername(systemUser.getUsername());
         model.addAttribute("systemUser", systemUser);
         model.addAttribute("meta", systemUserMetaData);
-        model.addAttribute("article", articleFetcher.giveMeOneArticle(systemUserMetaData));
-        model.addAttribute("quote", Quote.quoteByDay());
+        //model.addAttribute("article", articleFetcher.giveMeOneArticle(systemUserMetaData));
+        //model.addAttribute("quote", Quote.quoteByDay());
         model.addAttribute("norm", 56); //TODO
         return "profile";
     }
 
-    @Autowired
-    public void setMetaDataRepository(SystemUserMetaDataRepository metaDataRepository) {
-        this.metaDataRepository = metaDataRepository;
-    }
 }

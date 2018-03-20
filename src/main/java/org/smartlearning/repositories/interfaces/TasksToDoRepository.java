@@ -4,6 +4,12 @@ import org.smartlearning.domain.content.Task;
 
 import java.util.List;
 
+/**
+ * @Author
+ * Karol Meksuła
+ * 27-02-2018
+ * */
+
 public interface TasksToDoRepository {
     List<Task> fetchTasksToDo(long userId);
 
@@ -12,4 +18,6 @@ public interface TasksToDoRepository {
     Task fetchOneTaskByTaskId(long taskId);
 
     void updateTaskToDo(Task task);
+
+    void deleteAllUsersTasks(long userId);
 }

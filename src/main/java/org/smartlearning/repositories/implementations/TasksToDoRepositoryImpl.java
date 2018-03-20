@@ -22,6 +22,7 @@ public class TasksToDoRepositoryImpl implements TasksToDoRepository {
     private final String FETCH_QUERY_BY_TASK_ID = "SELECT * FROM tasksToDo WHERE taskId=?";
     private final String SAVE_QUERY = "INSERT INTO tasksToDo (userId, title, description, spendTime, branchOfScience, startDate) values(?,?,?,?,?,?)";
     private final String UPDATE_QUERY = "UPDATE tasksToDo SET spendTime=? WHERE taskId=?";
+    private final String DELETE_QUERY = "DELETE FROM tasksToDo WHERE userId=?";
 
     @Autowired
     public void setJdbcOperations(JdbcOperations jdbcOperations) {
@@ -83,5 +84,10 @@ public class TasksToDoRepositoryImpl implements TasksToDoRepository {
     @Override
     public void updateTaskToDo(Task task) {
         jdbcOperations.update(UPDATE_QUERY, task.getSpendTime(), task.getTaskId());
+    }
+
+    @Override
+    public void deleteAllUsersTasks(long userId) {
+        jdbcOperations.update(DELETE_QUERY, userId);
     }
 }

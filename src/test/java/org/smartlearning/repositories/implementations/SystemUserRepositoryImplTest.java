@@ -24,7 +24,7 @@ import static org.junit.Assert.*;
 @ContextConfiguration(classes = {RootConfig.class})
 public class SystemUserRepositoryImplTest {
     private final Logger logger = LogManager.getLogger(SystemUserRepositoryImplTest.class);
-    private final String USERNAME = "admin";
+    private final String USERNAME = "systemAdmin";
     private final String USERNAME2 = "picasso";
     private SystemUser systemUser;
 

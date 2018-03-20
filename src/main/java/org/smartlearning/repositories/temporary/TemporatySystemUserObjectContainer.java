@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Deprecated
-@Component
+//@Component
 public class TemporatySystemUserObjectContainer {
     private Map<String, SystemUser> systemUserMap;
     private static final Logger LOGGER = LogManager.getLogger(TemporatySystemUserObjectContainer.class);

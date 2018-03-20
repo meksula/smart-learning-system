@@ -14,4 +14,5 @@ public interface SystemUserStatsRepository {
 
     SystemUserStatistics fetchStatistics(long userId);
 
+    void deleteSystemUserStats(long user_id);
 }

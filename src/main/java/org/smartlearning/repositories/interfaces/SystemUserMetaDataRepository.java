@@ -11,4 +11,6 @@ public interface SystemUserMetaDataRepository {
     void saveMetaData(SystemUserMetaData systemUserMetaData);
 
     SystemUserMetaData fetchMetaData(long userId);
+
+    void deleteMetaData(long userId);
 }

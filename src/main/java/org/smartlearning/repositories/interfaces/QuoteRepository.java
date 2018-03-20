@@ -11,5 +11,9 @@ import org.smartlearning.domain.services.Quote;
 public interface QuoteRepository {
     Quote fetchQuoteByDay(long id);
 
-    void saveNewQuote(String quoteText);
+    void saveNewQuote(Quote quote);
+
+    void deleteQuote(long id);
+
+    long countQuotes();
 }

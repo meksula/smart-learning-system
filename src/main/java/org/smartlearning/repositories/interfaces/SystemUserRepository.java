@@ -13,4 +13,6 @@ public interface SystemUserRepository {
     void saveSystemUser(SystemUser systemUser);
 
     void deleteSystemUser(long userId);
+
+    void deleteSystemUser(String username);
 }

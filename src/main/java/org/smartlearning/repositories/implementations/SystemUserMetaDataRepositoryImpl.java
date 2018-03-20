@@ -16,6 +16,7 @@ public class SystemUserMetaDataRepositoryImpl implements SystemUserMetaDataRepos
     private JdbcOperations jdbcOperations;
     private final String SAVE_QUERY = "INSERT INTO metadata (userId, avatarPath, aboutMe) VALUES(?,?,?)";
     private final String FETCH_QUERY = "SELECT * FROM metadata WHERE userId=?";
+    private final String DELETE_META = "DELETE FROM metadata WHERE userId=?";
 
     @Autowired
     public void setJdbcOperations(JdbcOperations jdbcOperations) {
@@ -42,6 +43,11 @@ public class SystemUserMetaDataRepositoryImpl implements SystemUserMetaDataRepos
         }, userId);
 
         return systemUserMetaData;
+    }
+
+    @Override
+    public void deleteMetaData(long userId) {
+        jdbcOperations.update(DELETE_META, userId);
     }
 
 }

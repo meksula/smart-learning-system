@@ -19,6 +19,7 @@ public class NotesRepositoryImpl implements NotesRepository {
     private JdbcOperations jdbcOperations;
     private final String FETCH_QUERY = "SELECT * FROM notes WHERE userId=?";
     private final String SAVE_QUERY = "INSERT INTO notes (userId, text, dateAndTime) values(?,?,?)";
+    private final String DELETE_QUERY = "DELETE FROM notes WHERE noteId=?";
 
     @Autowired
     public void setJdbcOperations(JdbcOperations jdbcOperations) {
@@ -48,4 +49,10 @@ public class NotesRepositoryImpl implements NotesRepository {
         jdbcOperations.update(SAVE_QUERY, notes.getUserId(),
                 notes.getText(), notes.getDateAndTime());
     }
+
+    @Override
+    public void deleteNote(long noteId) {
+        jdbcOperations.update(DELETE_QUERY, noteId);
+    }
+
 }

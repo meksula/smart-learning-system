@@ -20,7 +20,8 @@ import java.sql.SQLException;
 public class SystemUserRepositoryImpl implements SystemUserRepository {
     private final String FETCH_QUERY = "SELECT * FROM SystemUser WHERE username=?";
     private final String SAVE_QUERY = "INSERT INTO SystemUser (username, name, surname, bornYear, email, password) values(?,?,?,?,?,?)";
-    private final String DELETE_QUERY = "DELETE FROM SystemUser WHERE id=?";
+    private final String DELETE_QUERY_ID = "DELETE FROM SystemUser WHERE id=?";
+    private final String DELETE_QUERY_USRNAME = "DELETE FROM SystemUser WHERE username=?";
     private JdbcOperations jdbcOperations;
 
     @Autowired
@@ -61,7 +62,12 @@ public class SystemUserRepositoryImpl implements SystemUserRepository {
 
     @Override
     public void deleteSystemUser(long userId) {
-        jdbcOperations.update(DELETE_QUERY, userId);
+        jdbcOperations.update(DELETE_QUERY_ID, userId);
+    }
+
+    @Override
+    public void deleteSystemUser(String username) {
+        jdbcOperations.update(DELETE_QUERY_USRNAME, username);
     }
 
 }

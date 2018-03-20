@@ -58,6 +58,7 @@ dependencies {
 
     testCompile group: 'org.springframework', name: 'spring-test', version: '5.0.3.RELEASE'
     testCompile group: 'junit', name: 'junit', version: '4.12'
-    testCompile 'org.mockito:mockito-domain:2.7.19'
     testCompile group: 'pl.pragmatists', name: 'JUnitParams', version: '1.1.1'
+    testCompile group: 'org.mockito', name: 'mockito-core', version: '2.16.0'
+
 }

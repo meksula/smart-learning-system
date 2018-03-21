@@ -26,10 +26,6 @@ public class RegistrationController {
         this.registrationProcess = registrationProcess;
     }
 
-    public RegistrationProcess getRegistrationProcess() {
-        return registrationProcess;
-    }
-
     @GetMapping
     public String registration(Model model) {
         model.addAttribute(new SystemUserForm());
@@ -41,7 +37,7 @@ public class RegistrationController {
         boolean decission = registrationProcess.verify(systemUserForm);
         model.addAttribute("username", systemUserForm.getUsername());
         model.addAttribute("decission", decission);
-        return "verification";
+        return "verificationSuccessful";
     }
 
 }

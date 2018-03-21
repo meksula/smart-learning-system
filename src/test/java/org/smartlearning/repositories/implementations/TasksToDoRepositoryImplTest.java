@@ -1,5 +1,6 @@
 package org.smartlearning.repositories.implementations;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -65,7 +66,7 @@ public class TasksToDoRepositoryImplTest {
             tasksToDoRepository.saveTaskToDo(createTask());
         }
         List<Task> tasks = tasksToDoRepository.fetchTasksToDo(USER_ID);
-        assertTrue(tasks.size() == 2);
+        assertEquals(2, tasks.size());
     }
 
     @Test
@@ -84,6 +85,11 @@ public class TasksToDoRepositoryImplTest {
     public void daoShouldDeleteAllUsersTasks() {
         tasksToDoRepository.deleteAllUsersTasks(USER_ID);
         tasksToDoRepository.fetchTasksToDo(USER_ID);
+    }
+
+    @After
+    public void cleanUp() {
+        tasksToDoRepository.deleteAllUsersTasks(USER_ID);
     }
 
 }

@@ -1,6 +1,5 @@
 package org.smartlearning.controller;
 
-import org.smartlearning.domain.content.websites.ArticleFetcher;
 import org.smartlearning.domain.user.SystemUser;
 import org.smartlearning.domain.user.extenders.SystemUserMetaData;
 import org.smartlearning.repositories.interfaces.SystemUserMetaDataRepository;
@@ -29,12 +28,6 @@ public class ProfileController {
     private SystemUserMetaDataRepository metaDataRepository;
     private String username;
     private BasicDataHandler basicDataHandler;
-    //private ArticleFetcher articleFetcher;
-
-    /*@Autowired
-    public void setArticleFetcher(ArticleFetcher articleFetcher) {
-        this.articleFetcher = articleFetcher;
-    }*/
 
     @Autowired
     public void setBasicDataHandler(BasicDataHandler basicDataHandler) {

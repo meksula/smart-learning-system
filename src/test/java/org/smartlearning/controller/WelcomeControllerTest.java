@@ -8,6 +8,12 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standaloneSetup;
 
+/**
+ * @Author Karol Meksuła
+ * 11-03-2018
+ **/
+
+
 public class WelcomeControllerTest {
     private WelcomeController welcomeController;
 

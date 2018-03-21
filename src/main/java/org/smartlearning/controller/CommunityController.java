@@ -8,6 +8,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
 
+/**
+ * @Author Karol Meksuła
+ * 21-03-2018
+ * */
+
 @Controller
 @RequestMapping("/community")
 public class CommunityController {

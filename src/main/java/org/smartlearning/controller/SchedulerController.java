@@ -84,7 +84,6 @@ public class SchedulerController {
 
     @PostMapping("/learn")
     public String doTask(@ModelAttribute("idHandler")IdHandler idHandler, Model model) {
-        System.out.println(idHandler.getId());
         model.addAttribute("id", idHandler.getId());
         return "redirect:/learn/{id}";
     }

@@ -12,6 +12,7 @@ public class BasicDataHandler {
     private long userId;
     private String username;
     private int taskId;
+    private long temporaryLearningTime;
 
     public int getTaskId() {
         return taskId;
@@ -35,5 +36,13 @@ public class BasicDataHandler {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public long getTemporaryLearningTime() {
+        return temporaryLearningTime;
+    }
+
+    public void setTemporaryLearningTime(long temporaryLearningTime) {
+        this.temporaryLearningTime = temporaryLearningTime;
     }
 }

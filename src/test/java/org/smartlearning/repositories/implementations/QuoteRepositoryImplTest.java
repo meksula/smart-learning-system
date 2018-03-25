@@ -4,7 +4,7 @@ import org.junit.After;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.smartlearning.configuration.RootConfig;
-import org.smartlearning.domain.services.Quote;
+import org.smartlearning.domain.dto.Quote;
 import org.smartlearning.repositories.interfaces.QuoteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;

@@ -1,12 +1,10 @@
 package org.smartlearning.repositories.implementations;
 
-import org.smartlearning.domain.services.Quote;
+import org.smartlearning.domain.dto.Quote;
 import org.smartlearning.repositories.interfaces.QuoteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcOperations;
 import org.springframework.stereotype.Repository;
-
-import java.util.ArrayList;
 
 /**
  * @Author

@@ -14,9 +14,6 @@ public class SystemUserStatistics {
     private String bestDay;
     private String worstDay;
     private long totalLearningTimeInMinutes;
-    private long everageTimeInMinutesByDay;
-    private long everageTimeInMinutesByWeek;
-    private long everageTimeInMinutesByMonth;
     private String favouriteBranchOfScience;
 
     public int getAllSessions() {
@@ -73,30 +70,6 @@ public class SystemUserStatistics {
 
     public void setTotalLearningTimeInMinutes(long totalLearningTimeInMinutes) {
         this.totalLearningTimeInMinutes = totalLearningTimeInMinutes;
-    }
-
-    public long getEverageTimeInMinutesByDay() {
-        return everageTimeInMinutesByDay;
-    }
-
-    public void setEverageTimeInMinutesByDay(long everageTimeInMinutesByDay) {
-        this.everageTimeInMinutesByDay = everageTimeInMinutesByDay;
-    }
-
-    public long getEverageTimeInMinutesByWeek() {
-        return everageTimeInMinutesByWeek;
-    }
-
-    public void setEverageTimeInMinutesByWeek(long everageTimeInMinutesByWeek) {
-        this.everageTimeInMinutesByWeek = everageTimeInMinutesByWeek;
-    }
-
-    public long getEverageTimeInMinutesByMonth() {
-        return everageTimeInMinutesByMonth;
-    }
-
-    public void setEverageTimeInMinutesByMonth(long everageTimeInMinutesByMonth) {
-        this.everageTimeInMinutesByMonth = everageTimeInMinutesByMonth;
     }
 
     public String getFavouriteBranchOfScience() {

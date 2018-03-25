@@ -2,13 +2,18 @@ package org.smartlearning.aspects;
 
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
-import org.smartlearning.domain.content.Task;
-import org.smartlearning.domain.content.meassure.NanoParser;
-import org.smartlearning.domain.content.meassure.TimerTask;
+import org.smartlearning.domain.dto.Task;
+import org.smartlearning.domain.content.time.NanoParser;
+import org.smartlearning.domain.content.time.TimerTask;
 import org.smartlearning.repositories.interfaces.TasksToDoRepository;
 import org.smartlearning.repositories.temporary.BasicDataHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+/**
+ * @Author Karol Meksuła
+ * 21-03-2018
+ **/
 
 @Aspect
 @Component
@@ -49,6 +54,7 @@ public class AspectTimeCountLogic {
         timerTask.appointEndTime();
         long sum = timerTask.summarize();
         sum = nanoParser.parseNanoToSeconds(sum);
+        basicDataHandler.setTemporaryLearningTime(sum);
         task.summarizeSpendTime(sum);
         tasksToDoRepository.updateTaskToDo(task);
     }

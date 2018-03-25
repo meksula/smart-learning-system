@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" >
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Do task</title>
@@ -45,7 +45,7 @@
 
 </head>
 <body onload="show()">
-    <div>
+    <div style="width:800px; margin:0 auto;">
         <a style="color: white" th:href="@{/profile}">go home</a>
         <a style="color: white" th:href="@{/scheduler}">go manager</a>
         <hr>
@@ -56,34 +56,21 @@
         <br/>
 
         <form th:action="@{/learn/start}" method="post">
-            <input type="submit" value="Start">Start</input>
+            <input type="submit" value="Start" onclick="start();"><p style="color: white">Start</p></input>
         </form>
 
         <form th:action="@{/learn/stop}" method="post">
-            <input type="submit" value="Stop & summary">Stop & summary</input>
+            <input type="submit" value="Stop & summary" onclick="stop()"><p style="color: white">Stop & summary</p>></input>
         </form>
 
-        <div th:if="${summary != null}">
-            <ul>
-                <li th:each="item : ${summary}" th:text="${item}"></li>
-            </ul>
+        <div style="color: white; width:800px; margin:0 auto;">
+            <p>You just learned: </p>
+            <span th:text="${time}"></span>
         </div>
-
-        <div th:if="${summary != null}">
-            <h1>Result</h1>
-            <ul>
-                <th:block th:object="${summary}">
-                    <li th:each="item : *{item}" th:text="${item}">Item description here...</li>
-                </th:block>
-            </ul>
-        </div>
-
         <hr>
         <br/>
         <br/>
-        <div style="color: white">Time: <span id="time"></span></div>
-        <input type="button" value="start" onclick="start();">
-        <input type="button" value="stop" onclick="stop();">
+        <div style="color: white">Session time: <span id="time"></span></div>
 
         <script>
             var	clsStopwatch = function() {

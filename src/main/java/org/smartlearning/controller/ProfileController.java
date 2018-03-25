@@ -1,5 +1,6 @@
 package org.smartlearning.controller;
 
+import org.smartlearning.domain.dto.Quote;
 import org.smartlearning.domain.user.SystemUser;
 import org.smartlearning.domain.user.extenders.SystemUserMetaData;
 import org.smartlearning.repositories.interfaces.SystemUserMetaDataRepository;
@@ -56,6 +57,12 @@ public class ProfileController {
         return "redirect:/profile/{username}";
     }
 
+    private Quote quote;
+
+    public void setQuote(Quote quote) {
+        this.quote = quote;
+    }
+
     @GetMapping(value = "/{username}")
     public String mainProfile(@PathVariable("username") String username, Model model) throws IOException {
         SystemUser systemUser = systemUserRepository.fetchByUsername(username);
@@ -65,8 +72,11 @@ public class ProfileController {
         model.addAttribute("systemUser", systemUser);
         model.addAttribute("meta", systemUserMetaData);
         //model.addAttribute("article", articleFetcher.giveMeOneArticle(systemUserMetaData));
-        //model.addAttribute("quote", Quote.quoteByDay());
+        if (quote != null)
+            model.addAttribute("quote", quote.getText());
+
         model.addAttribute("norm", 56); //TODO
+
         return "profile";
     }
 

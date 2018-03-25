@@ -5,7 +5,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.smartlearning.configuration.RootConfig;
-import org.smartlearning.domain.content.Task;
+import org.smartlearning.domain.dto.Task;
 import org.smartlearning.domain.user.SystemUser;
 import org.smartlearning.repositories.interfaces.TasksToDoRepository;
 import org.springframework.beans.factory.annotation.Autowired;

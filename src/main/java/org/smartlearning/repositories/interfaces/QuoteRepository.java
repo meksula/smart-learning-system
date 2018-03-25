@@ -1,6 +1,6 @@
 package org.smartlearning.repositories.interfaces;
 
-import org.smartlearning.domain.services.Quote;
+import org.smartlearning.domain.dto.Quote;
 
 /**
  * @Author

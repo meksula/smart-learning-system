@@ -1,10 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>stats</title>
 </head>
 <body>
     <p>statistics</p>
+
+    <div class="stats">
+        <p>all sessions: <span th:text="*{stats.allSessions}"></span></p>
+        <p>all days: <span th:text="*{stats.allDays}"></span></p>
+        <p style="color:green;">task done: <span th:text="*{stats.tasksDone}"></span></p>
+        <p style="color:red;">task planned: <span th:text="*{stats.tasksNotDoneYet}"></span></p>
+        <p>your best day: <span th:text="*{stats.bestDay}"></span></p>
+        <p>your worst day: <span th:text="*{stats.worstDay}"></span></p>
+        <p>total learning time: <span th:text="*{stats.totalLearningTimeFormated}"></span></p>
+        <p>everage learning time by day: <span th:text="*{stats.everageTimeInMinutesByDay}"></span></p>
+        <p>everage learning time by week: <span th:text="*{stats.everageTimeInMinutesByWeek}"></span></p>
+        <p>everage learning time by month: <span th:text="*{stats.everageTimeInMinutesByMonth}"></span></p>
+        <p>favourite branch of knowlenge: <span th:text="*{stats.favouriteBranchOfScience}"></span></p>
+        <p>branches of science you working on: <span th:text="*{stats.currentsWorkOn}"></span></p>
+    </div>
 </body>
 </html>

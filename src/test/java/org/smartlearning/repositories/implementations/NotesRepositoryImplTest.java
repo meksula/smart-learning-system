@@ -3,7 +3,7 @@ package org.smartlearning.repositories.implementations;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.smartlearning.configuration.RootConfig;
-import org.smartlearning.domain.content.Notes;
+import org.smartlearning.domain.dto.Notes;
 import org.smartlearning.repositories.interfaces.NotesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;

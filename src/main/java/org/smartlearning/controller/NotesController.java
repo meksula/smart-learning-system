@@ -1,6 +1,6 @@
 package org.smartlearning.controller;
 
-import org.smartlearning.domain.content.Notes;
+import org.smartlearning.domain.dto.Notes;
 import org.smartlearning.repositories.interfaces.NotesRepository;
 import org.smartlearning.repositories.temporary.BasicDataHandler;
 import org.springframework.beans.factory.annotation.Autowired;

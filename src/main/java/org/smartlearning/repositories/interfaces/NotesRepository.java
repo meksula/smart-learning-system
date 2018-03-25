@@ -1,6 +1,6 @@
 package org.smartlearning.repositories.interfaces;
 
-import org.smartlearning.domain.content.Notes;
+import org.smartlearning.domain.dto.Notes;
 
 import java.util.ArrayList;
 

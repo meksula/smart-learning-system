@@ -18,7 +18,7 @@ public class DatasourceConfig {
     public DataSource dataSource() {
         DriverManagerDataSource driverManagerDataSource = new DriverManagerDataSource();
         driverManagerDataSource.setDriverClassName("com.mysql.jdbc.Driver");
-        driverManagerDataSource.setUrl("jdbc:mysql://localhost:3306/smartlearning?useUnicode=yes&characterEncoding=UTF-8");
+        driverManagerDataSource.setUrl("jdbc:mysql://localhost:3306/smartlearning?useUnicode=yes&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC");
         driverManagerDataSource.setUsername("root");
         driverManagerDataSource.setPassword("512911986");
         return driverManagerDataSource;

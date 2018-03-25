@@ -1,6 +1,6 @@
 package org.smartlearning.repositories.interfaces;
 
-import org.smartlearning.domain.content.Task;
+import org.smartlearning.domain.dto.Task;
 
 import java.util.List;
 
